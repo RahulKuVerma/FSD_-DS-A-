@@ -1,0 +1,150 @@
+/* Reset default spacing */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  padding: 5px 30px;   /* reduced padding */
+  height: 80px;        /* fixed smaller height */
+}
+
+.logo img {
+  width: 70px;         /* smaller logo */
+  height: 70px;
+}
+
+.nav {
+  display: flex;
+  gap: 40px;           /* balanced spacing */
+}
+
+.nav a {
+  color: white;
+  font-size: 20px;     /* reduced font size */
+  text-decoration: none;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+
+/* Front section */
+.front {
+  position: relative;
+  text-align: center;
+}
+
+.front-img {
+  width: 100%;
+  height: 400px;
+  opacity: 0.8;
+}
+
+.front-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px black;
+}
+
+/* Pledge line */
+.pledge {
+  background-color: white;
+  color:maroon;
+  font-size: 18px;
+  padding: 10px 0;
+  font-weight: 500;
+}
+
+/* Two-column glance section */
+.glance-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 80px;
+  background-color: #f9f9f9;
+}
+
+.glance-left h2 {
+  font-size: 36px;
+  color: #222;
+}
+
+.glance-right {
+  width: 60%;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Stats grid with animation */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  padding: 40px 80px;
+  background-color: #fff;
+  text-align: center;
+}
+
+/* Initial hidden state */
+.stat {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: moveUp 0.8s ease forwards;
+}
+
+/* Staggered delays for each item */
+.stat:nth-child(1) { animation-delay: 0.2s; }
+.stat:nth-child(2) { animation-delay: 0.4s; }
+.stat:nth-child(3) { animation-delay: 0.6s; }
+.stat:nth-child(4) { animation-delay: 0.8s; }
+.stat:nth-child(5) { animation-delay: 1s; }
+.stat:nth-child(6) { animation-delay: 1.2s; }
+
+@keyframes moveUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat h3 {
+  color: #b30000;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.stat p {
+  font-size: 15px;
+  color: #222;
+  font-weight: 500;
+}
+
+
+/* Footer */
+.footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: auto; /* keeps footer at bottom */
+}
