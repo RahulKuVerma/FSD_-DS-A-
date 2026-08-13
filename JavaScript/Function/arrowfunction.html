@@ -7,24 +7,19 @@
 </head>
 <body>
     <script>
-        function abes(){
+        const abes = () => {
             document.write("<br> we are coders");
         }
         abes();
-        abes();
-        abes();
 
-
-
-      function add(a, b){
-       document.write("<br>" + (a + b));
-    }
-     add(5, 6);
-
-     function add2(a, b){
-       return (a + b);
-    }
-     document.write("<br>" + add2(5, 6));
+        const add = (a, b) => {
+                document.write("<br>" + (a + b));
+            }
+        add(5, 6);
+        const add2 = (a, b) => {
+                return (a + b);
+            }
+        document.write("<br>" + add2(5, 6));
     </script>
 </body>
 </html>
