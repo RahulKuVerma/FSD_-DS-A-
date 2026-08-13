@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const car = ["car1", "car2", "car3", "car4", "car5"];
+        let text=" ";
+        let len= car.length;
+        for(let i=0; i<len; i++){
+            if(i%2!=0){
+                continue;
+            }
+            text+=car[i]+"<br>";
+        }
+        document.write(text);
+    </script>
+</body>
+</html>
