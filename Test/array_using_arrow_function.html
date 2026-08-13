@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = parseInt(prompt("Enter 1 for car, 2 for aeroplane, 3 for helicopter"));
+
+        let vehicle = (a) => {
+            if(a === 1){
+                let car_name = prompt("Enter the name of car: ");
+                const car_per_seat_cost = 200;
+                alert("car_per_seat_cost is: " + car_per_seat_cost);
+                 let car_seats = parseInt(prompt("Enter the no of car_seats :"));
+                let car_rent_cost = car_seats * car_per_seat_cost;
+                document.write("<br>Car Name: " + car_name);
+                document.write("<br>Car Seats: " + car_seats);
+                document.write("<br>Car Rent Cost: " + car_rent_cost);
+            }
+            else if(a === 2){
+                let aeroplane_name = prompt("Enter the name of aeroplane: "); 
+                const aeroplane_per_seat_cost = 1000;
+                alert("aeroplane_per_seat_cost is: " + aeroplane_per_seat_cost);
+                let aeroplane_seats = parseInt(prompt("Enter the no of aeroplane_seats :"));
+                let aeroplane_rent_cost = aeroplane_seats * aeroplane_per_seat_cost;
+                document.write("<br>Aeroplane Name: " + aeroplane_name);
+                document.write("<br>Aeroplane Seats: " + aeroplane_seats);
+                document.write("<br>Aeroplane Rent Cost: " + aeroplane_rent_cost);
+            }
+            else if(a === 3){
+                let helicopter_name = prompt("Enter the name of helicopter: ");
+                const helicopter_per_seat_cost = 500;
+                alert("helicopter_per_seat_cost is: " + helicopter_per_seat_cost);
+                let helicopter_seats = parseInt(prompt("Enter the no of helicopter_seats :"));
+                let helicopter_rent_cost = helicopter_seats * helicopter_per_seat_cost;
+                document.write("<br>Helicopter Name: " + helicopter_name);
+                document.write("<br>Helicopter Seats: " + helicopter_seats);
+                document.write("<br>Helicopter Rent Cost: " + helicopter_rent_cost);
+            }
+            else{
+                document.write("<br>Invalid input");
+            }
+        }
+
+        vehicle(a);
+    </script>
+</body>
+</html>
