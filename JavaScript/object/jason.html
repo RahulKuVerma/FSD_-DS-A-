@@ -9,7 +9,8 @@
     <!-- jason = datatype Jason-name {
                     key1: value1,
                     key2: value2,
-    } -->
+    } 
+    JSON:  JavaScript Object Notation-->
     <script>
         // creating a json object   
         const student = {
@@ -20,7 +21,25 @@
         };
 
          document.write(student);
-         
+
+         document.write("<br>");
+
+         console.log(student);
+
+         document.write("<br>");
+
+         // accessing the json object using for in loop
+        for(let key in student){
+            document.write("<br>" + key + ": " + student[key]);
+        }
+
+        document.write("<br>");
+        // accessing the json object using for in loop in console
+        for(let key in student){
+            console.log(key + ": " + student[key]); 
+        }
+
+        document.write("<br>");
 
          // accessing the json object using dot notation
         document.write("<br>Student Name: " + student.name);
@@ -28,6 +47,31 @@
         document.write("<br>Student Course: " + student.course);
         document.write("<br>Student Fees: " + student.fees);
 
+        document.write("<br>");
+
+        // accessing the json object using bracket notation
+        document.write("<br>Student Name: " + student["name"]); 
+        document.write("<br>Student Age: " + student["age"]);
+        document.write("<br>Student Course: " + student["course"]);
+        document.write("<br>Student Fees: " + student["fees"]);
+
+        document.write("<br>");
+
+        // adding new key-value pair to the json object
+        student["college"] = "XYZ College";
+        document.write("<br>Student College: " + student.college);
+
+        document.write("<br>");
+
+        // updating the value of a key in the json object
+        student["fees"] = 60000;    
+
+        document.write("<br>Updated Student Fees: " + student.fees);
+
+        document.write("<br>");
+
+        // printing the entire json object after adding new key-value pair and updating the value of a key
+        document.write("<br>Updated Student Object: " + JSON.stringify(student));   
 
     </script>
     
