@@ -6,10 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    // jason = datatype Jason-name {
+    <!-- jason = datatype Jason-name {
                     key1: value1,
                     key2: value2,
-    }
+    } -->
     <script>
         // creating a json object   
         const student = {
@@ -19,11 +19,16 @@
             fees: 50000,
         };
 
-        // accessing the json object
+         document.write(student);
+         
+
+         // accessing the json object using dot notation
         document.write("<br>Student Name: " + student.name);
         document.write("<br>Student Age: " + student.age);
         document.write("<br>Student Course: " + student.course);
         document.write("<br>Student Fees: " + student.fees);
+
+
     </script>
     
 </body>
