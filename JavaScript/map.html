@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS NEW FEATURES (Map)</title>
+</head>
+<body>
+    <script>
+        const num=[11,45,51,78,90,100,200,300,400,500];
+        const evenNum=num.filter((value)=>(
+            value%2==0
+        ));
+        const sqareNum=evenNum.map((value)=>(
+            value*value
+        ));
+        console.log(evenNum);
+        console.log(sqareNum);
+    </script>
+    
+</body>
+</html>
