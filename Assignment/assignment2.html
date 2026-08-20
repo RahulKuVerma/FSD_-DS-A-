@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const student = {
+        student1: { name: "Rahul", class: "B.Tech" },
+        student2: { name: "Rohit", class: "M.Tech" },
+        student3: { name: "Ramesh", class: "M.Tech" },
+        student4: { name: "Rakesh", class: "B.Tech" },
+        student5: { name: "Rohit", class: "10th" }
+    };
+
+    let choice = prompt("Enter the class to filter the students (B.Tech/M.Tech/10th):");
+
+    let classChoice = Object.values(student).filter(value => value["class"] === choice);
+
+    document.write(JSON.stringify(classChoice));
+</script> 
+</body>
+</html>
