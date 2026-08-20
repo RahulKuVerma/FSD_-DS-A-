@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        // Example of array destructuring
+        const arr = [1, 2, 3, 4, 5];
+        const [first, second] = arr;
+        console.log(first); // Output: 1
+        console.log(second); // Output: 2
+
+        // Example of object destructuring
+        const person = {
+            name: "John",
+            age: 30,
+            city: "New York"
+        };
+        const { name, age } = person;
+        console.log(name); // Output: John
+        console.log(age); // Output: 30
+
+        */
+       // by sir
+       const student={
+        name:"Rahul",
+        age:22,
+        city:"Delhi"
+       }
+       document.write("Without destructuring:");
+       document.write("<br>");
+       document.write(student.name);
+       document.write("<br>");
+       document.write(student.age);
+         document.write("<br>");
+       document.write(student.city);
+    document.write("<br>");
+       // with destructuring
+         const {name,age,city}=student;
+         document.write("With destructuring:");
+         document.write("<br>");
+         document.write(name);
+         document.write("<br>");
+         document.write(age);
+         document.write("<br>");
+         document.write(city);
+    </script>
+</body>
+</html>
