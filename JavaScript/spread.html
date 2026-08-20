@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js feature spread</title>
+</head>
+<body><script>
+    /* Spread Operator (...) in JavaScript
+    It is used to spread/unpack the elements of an array or the properties of an object.
+   Think of it as:
+"Take everything inside this array/object and spread it here."*/
+    const num1=[1,2,3,4,5];
+    const num2=[6,7,8,9,10];
+    const num3=[...num1,...num2];
+    const num4=[...num1];
+    document.write(num3);
+    document.write("<br>");
+    document.write(num4);
+</script>
+    
+</body>
+</html>
