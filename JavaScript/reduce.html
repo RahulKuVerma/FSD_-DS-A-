@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS NEW FEATURES (Map)</title>
+    <title>js new ffunction reduce</title>
 </head>
 <body>
     <script>
-        const num=[11,45,51,78,90,100,200,300,400,500];
+         const num=[1,5,9,7,2,3,4,6,8,10];
         const evenNum=num.filter((value)=>(
             value%2==0
         ));
         const sqareNum=evenNum.map((value)=>(
             value*value
         ));
+        const sum=sqareNum.reduce((sum,Value)=>(
+         sum+Value
+        ));
+        console.log("num: ", num);
         console.log("evenNum: ", evenNum);
         console.log("squareNum: ", sqareNum);
+        console.log("sum: ", sum);
     </script>
-    
 </body>
 </html>
