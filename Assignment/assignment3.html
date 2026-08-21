@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Back in JS</title>
+</head>
+<body>
+<script>
+    const password = "jsisbest";
+    const Username = "Rahul";
+
+    function compare(name, pass) {
+        if (pass === password && name === Username) {
+            return true;
+        }
+        return false; // explicit false
+    }
+
+    function input(callback) {
+        let name = prompt("Enter your name:");
+        let password = prompt("Enter your password:");
+        if (callback(name, password)) {
+            document.write("You can Login");
+        } else {
+            document.write("Login Failed");
+        }
+    }
+
+    input(compare);
+</script>
+</body>
+</html>
