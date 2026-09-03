@@ -33,3 +33,19 @@ test1(() => {
    });  
     });
 
+    /*
+Callback
+
+A callback is a function passed as an argument to another function and executed later,
+ often after an asynchronous operation completes.
+
+Promise
+
+A Promise is an object representing the eventual completion or failure of an asynchronous operation and
+ its resulting value.
+
+Async/Await
+
+Async/await is syntactic sugar built on top of Promises that allows asynchronous code to be written 
+in a more synchronous and readable style.
+*/

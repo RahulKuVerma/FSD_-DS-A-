@@ -1,7 +1,29 @@
-console.log("task one");
-console.log("task two");
-setTimeout(()=>{
-    console.log("task three");
-},200000);
-console.log("task four");
-console.log("task five");
+// Async Await
+//  It handle the case of promise in a better way
+function f1 () {
+     return new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log("HI !!!!");
+        resolve();
+    }, 1500);
+});
+}
+function f2 () {
+     return new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log("ABES COLLEGE");
+        resolve();
+    }, 2000);
+});
+
+}
+
+async function callAsyncFunctions() {
+    try {
+        await f1();
+        await f2();
+    } catch (err) {
+        console.log(err);
+    }
+}
+callAsyncFunctions();
