@@ -18,7 +18,7 @@ function test3(cb) {
         cb();
     }, 1500);
 }
-function test4(cb) {
+function test4() {
     setTimeout(() => {
         console.log("Test 4 completed");
     }, 1000);
@@ -32,3 +32,4 @@ test1(() => {
         });        
    });  
     });
+
