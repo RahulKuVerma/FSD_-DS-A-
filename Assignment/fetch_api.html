@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MY_shop</title>
     <style>
-        table, th, td {
+        table{
             border: 2px solid red;
-            border-collapse: collapse;
             margin: auto;
             width: 80%;
             padding :10px;
             font-size :25px;
             color:red;
+            border-collapse: collapse;
         }
+       img{
+        width:100px;
+        height:100px;
+       }
         </style>
 </head>
 <body>
@@ -41,8 +45,19 @@
             const data = await res.json();
             console.log("DATA",data.products);
             let row ="";
-            
-         }
+            data.products.map((i, index)=>{
+             row+=`
+             <tr>
+                <td>${index+1}</td>
+                <td>${i.title}</td>
+                <td><img src="${i.images [0]}"/></td>
+                <td>${i.category}</td>
+                <td>${i.price}</td>
+            </tr>
+            `;
+            ele.innerHTML=row;
+         })
+        }
          catch(err){
              console.error("Error fetching data:", err);
          }
