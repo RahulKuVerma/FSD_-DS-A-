@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+</head>
+<body>
+    </head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <label for ="city">choose a city</label>
+                <select id ="city" name ="city">
+                    <option value ="delhi">Delhi</option>
+                    <option value =""></option>
+                    <option value =""> </option>
+                    
+                </select>   
+            </tr>
+        </thead>
+        <tbody id ="data">
+           
+
+        </tbody>
+    </table>
+    <script>
+        const ele =document.getElementById("data");
+          const URL ="https://dummyjson.com/products";
+         async function loadData(){
+         try{
+            const res=  await fetch(URL);
+            const data = await res.json();
+            console.log("DATA",data.products);
+            let row ="";
+            data.products.map((i, index)=>{
+             row+=`
+             <tr>
+                <td>${index+1}</td>
+                <td>${i.title}</td>
+                <td><img src="${i.images [0]}"/></td>
+                <td>${i.category}</td>
+                <td>${i.price}</td>
+            </tr>
+            `;
+            ele.innerHTML=row;
+         })
+        }
+         catch(err){
+             console.error("Error fetching data:", err);
+         }
+          }
+          loadData();
+    </script>
+</body>
+</html>
