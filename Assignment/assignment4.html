@@ -1,57 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
 </head>
-<body>
-    </head>
-<body>
-    <table>
-        <thead>
-            <tr>
-                <label for ="city">choose a city</label>
-                <select id ="city" name ="city">
-                    <option value ="delhi">Delhi</option>
-                    <option value =""></option>
-                    <option value =""> </option>
-                    
-                </select>   
-            </tr>
-        </thead>
-        <tbody id ="data">
-           
 
-        </tbody>
-    </table>
+<body>
+
+    <form id="weatherForm">
+
+        <label for="city">Choose a city:</label>
+
+        <select id="city" name="city">
+            <option value="Delhi">Delhi</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Pune">Pune</option>
+        </select>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <div id="data"></div>
+
     <script>
-        const ele =document.getElementById("data");
-          const URL ="https://dummyjson.com/products";
-         async function loadData(){
-         try{
-            const res=  await fetch(URL);
-            const data = await res.json();
-            console.log("DATA",data.products);
-            let row ="";
-            data.products.map((i, index)=>{
-             row+=`
-             <tr>
-                <td>${index+1}</td>
-                <td>${i.title}</td>
-                <td><img src="${i.images [0]}"/></td>
-                <td>${i.category}</td>
-                <td>${i.price}</td>
-            </tr>
-            `;
-            ele.innerHTML=row;
-         })
+
+        const ele = document.getElementById("data");
+
+        const API_KEY = "YOUR_API_KEY";
+
+        async function loadData(city) {
+
+            const URL =
+                `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}&aqi=yes`;
+
+            try {
+
+                const res = await fetch(URL);
+
+                const data = await res.json();
+
+                console.log("DATA", data);
+
+                if (data.error) {
+                    ele.innerHTML = `<p>${data.error.message}</p>`;
+                    return;
+                }
+
+                ele.innerHTML = `
+                    <h2>Weather in ${data.location.name}</h2>
+
+                    <img src="https:${data.current.condition.icon}"
+                         alt="${data.current.condition.text}">
+
+                    <p>
+                        <strong>Condition:</strong>
+                        ${data.current.condition.text}
+                    </p>
+
+                    <p>
+                        <strong>Temperature:</strong>
+                        ${data.current.temp_c} °C
+                    </p>
+
+                    <p>
+                        <strong>Feels Like:</strong>
+                        ${data.current.feelslike_c} °C
+                    </p>
+
+                    <p>
+                        <strong>Humidity:</strong>
+                        ${data.current.humidity}%
+                    </p>
+
+                    <p>
+                        <strong>Wind:</strong>
+                        ${data.current.wind_kph} km/h
+                    </p>
+
+                    <p>
+                        <strong>Wind Direction:</strong>
+                        ${data.current.wind_dir}
+                    </p>
+
+                    <p>
+                        <strong>Last Updated:</strong>
+                        ${data.current.last_updated}
+                    </p>
+                `;
+
+            } catch (err) {
+
+                console.error("Error fetching data:", err);
+
+                ele.innerHTML = `
+                    <p>Error fetching weather data.</p>
+                `;
+            }
         }
-         catch(err){
-             console.error("Error fetching data:", err);
-         }
-          }
-          loadData();
+
+
+        document.getElementById("weatherForm").addEventListener("submit", function (e) {
+
+            e.preventDefault();
+
+            const city = document.getElementById("city").value;
+
+            loadData(city);
+
+        });
+
     </script>
+
 </body>
+
 </html>
