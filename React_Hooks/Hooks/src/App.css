@@ -17,6 +17,44 @@
   }
 }
 
+.image-controls {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  padding: 24px;
+}
+
+.image-stage {
+  width: min(560px, 90vw);
+  height: 320px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.image-stage img {
+  width: min(280px, 70vw);
+  transition: transform 180ms ease;
+}
+
+.movement-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.movement-controls button {
+  padding: 8px 14px;
+  border: 1px solid var(--accent-border);
+  border-radius: 5px;
+  color: var(--text-h);
+  background: var(--accent-bg);
+  cursor: pointer;
+}
+
 .hero {
   position: relative;
 

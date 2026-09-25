@@ -1,10 +1,9 @@
 import React from 'react'
-import Counter from './Components/counter'
+import Image from './Components/Image'
 const App = () => {
   return (
-    <div>
-      <h1> My Counter App </h1>
-      <Counter />
+    <div>My App
+      <Image />
     </div>
   )
 }
