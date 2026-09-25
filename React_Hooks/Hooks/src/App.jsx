@@ -1,9 +1,10 @@
 import React from 'react'
-import Cards from './Components/Card'
+import Counter from './Components/counter'
 const App = () => {
   return (
     <div>
-      <Cards />
+      <h1> My Counter App </h1>
+      <Counter />
     </div>
   )
 }
