@@ -1,9 +1,10 @@
 import React from 'react'
-import Image from './Components/Image'
+import UseEffect from './Components/useeffect'
+import UseState from './Components/usestate'
 const App = () => {
   return (
     <div>My App
-      <Image />
+      <useeffect/>
     </div>
   )
 }
